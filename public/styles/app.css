@@ -81,3 +81,189 @@ a {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header form {
+  width: 100%;
+}
+
+.site-header__search-tools {
+  flex-wrap: nowrap;
+}
+
+.site-header__cart-btn {
+  max-width: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-header__brand {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.site-header__bar {
+  background-color: rgb(16, 28, 106);
+}
+
+.site-header__logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header__nav {
+  width: 100%;
+  max-width: 960px;
+}
+
+.site-header__nav-wrap {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.site-header__nav-list {
+  gap: 0.5rem;
+}
+
+.site-header__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-footer .row {
+  width: 100%;
+  margin: 0;
+}
+
+.footer__list {
+  gap: 0.5rem;
+}
+
+.footer__socials {
+  gap: 0.5rem;
+}
+
+@media (max-width: 991.98px) {
+  .site-header__top {
+    row-gap: 0.75rem;
+  }
+
+  .site-header__actions {
+    justify-content: center !important;
+  }
+
+  .site-header .btn-group {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .site-header {
+    position: static !important;
+  }
+
+  .site-header__bar {
+    padding-top: 0.25rem;
+  }
+
+  .site-header__top {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .site-header__brand {
+    font-size: 1.75rem;
+  }
+
+  .site-header__actions {
+    gap: 0.4rem;
+    justify-content: stretch !important;
+  }
+
+  .site-header__search-tools .col-8 {
+    width: 66.666667%;
+  }
+
+  .site-header__search-tools .col-2 {
+    width: 16.666667%;
+  }
+
+  .site-header__actions > .btn,
+  .site-header__actions .btn-group {
+    width: 100%;
+  }
+
+  .site-header__actions .btn-group .btn {
+    width: 100%;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .navbar-collapse {
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .site-header__nav-list {
+    width: 100%;
+    text-align: center;
+    gap: 0;
+  }
+
+  .site-header__nav-list .nav-link {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .carousel {
+    margin-top: 0 !important;
+  }
+
+  .carousel-caption {
+    position: static;
+    display: block !important;
+    padding: 0.75rem 1rem 1rem;
+    background: #fff;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .carousel-caption p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+  }
+
+  .card .position-absolute {
+    max-width: calc(100% - 1rem);
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .footer {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}

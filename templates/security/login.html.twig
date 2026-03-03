@@ -1,45 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Astrasneaker | Connexion
-{% endblock %}
+{% block title %}Astrasneaker | Connexion{% endblock %}
 
 {% block body %}
-	<form method="post">
-		{% if error %}
-			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-		{% endif %}
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
 
-		{% if app.user %}
-			<div class="mb-3">
-				Vous êtes connecté en tant que 
-				{{ app.user.userIdentifier }},
-				<a href="{{ path('app_logout') }}">Déconnexion</a>
-			</div>
-		{% endif %}
+        {% if app.user %}
+            <div class="mb-3">
+                Vous etes connecte en tant que {{ app.user.userIdentifier }},
+                <a href="{{ path('app_logout') }}">Deconnexion</a>
+            </div>
+        {% endif %}
 
-		<div class="container-md mb-4" id="login-div">
-			<div class="card mt-4">
-				<div class="card-header">
-					<h1 class="card-title font-weight-bold text-danger h3 mb-3">
-						Se connecter
-					</h1>
-				</div>
-				<div class="card-body d-flex flex-column">
-					<label for="inputEmail" class="mb-1">Email</label>
-					<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-3" autocomplete="email" required autofocus>
-					<label for="inputPassword" class="mb-1">Mot de passe</label>
-					<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        <div class="container-md mb-4" id="login-div">
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h1 class="card-title font-weight-bold text-danger h3 mb-3">
+                        Se connecter
+                    </h1>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <label for="inputEmail" class="mb-1">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-3" autocomplete="email" required autofocus>
+                    <label for="inputPassword" class="mb-1">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-					<div class="mt-1 d-flex flex-column">
-						<a href="{{path('add_user')}}" class="align-self-end mb-3 fs-6">Pas de compte ? inscrivez vous ici</a>
-						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-						<button class="btn btn-primary text-start align-self-center mt-3 mb-2" type="submit">
-							Se connecter
-						</button>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</form>
+                    <div class="mt-1 d-flex flex-column">
+                        <a href="{{ path('add_user') }}" class="align-self-end mb-3 fs-6">Pas de compte ? Inscrivez-vous ici</a>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <button class="btn btn-primary text-start align-self-center mt-3 mb-2" type="submit">
+                            Se connecter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 {% endblock %}
